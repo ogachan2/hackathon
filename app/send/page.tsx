@@ -8,15 +8,15 @@ export default async function Page({
     searchParams,
   }: {
     params: { slug: string };
-    searchParams: { [key: string]: string | string[] | undefined };
+    searchParams: { [key: string]: string | undefined };
   }) {
-    const matchdate = searchParams.matchdate;
-    const matchname = searchParams.matchname;
-    const team = searchParams.team;
-    const place = searchParams.place;
-    const result = searchParams.result;
-    const category = searchParams.category;
-    const formation = searchParams.formation;
+    const matchdate = searchParams.matchdate || '';
+    const matchname = searchParams.matchname || '';
+    const team = searchParams.team || '';
+    const place = searchParams.place || '';
+    const result = searchParams.result || '';
+    const category = searchParams.category || '';
+    const formation = searchParams.formation || '';
 
 
     await prisma.matchrecords.create({

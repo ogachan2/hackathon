@@ -12,7 +12,7 @@ export default function Page() {
   }
 
   return (
-    <fragment className="content-center min-h-7">
+    <div className="content-center min-h-7">
       <div className="bg-white/30 p-12 shadow-xl ring-1 ring-gray-900/5 rounded-lg backdrop-blur-lg max-w-xl h-full mx-auto w-full">
         <div className="flex flex-col justify-between items-center mb-4 space-y-8">
       <h1>入力</h1>
@@ -53,6 +53,6 @@ export default function Page() {
           </div>
         </div>
         </div>
-    </fragment>
+    </div>
   )
 }
