@@ -6,7 +6,7 @@ export default function Page() {
   const router = useRouter()
   const { register, handleSubmit } = useFormContext()
 
-  const onSubmit = async data => {
+  const onSubmit = async (data: any) => {
     console.log(data.matchdate)
     router.push(`/send?matchdate=${data.matchdate}&matchname=${data.matchname}&team=${data.team}&place=${data.place}&result=${data.result}&category=${data.category}&formation=${data.formation}`)
   }
