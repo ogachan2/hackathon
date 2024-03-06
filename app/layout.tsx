@@ -16,7 +16,7 @@ type FormValues = {
   team: string
   place: string
   result: string
-  members: string
+  category: string
   formation: string
 }
 

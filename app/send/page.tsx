@@ -15,7 +15,7 @@ export default async function Page({
     const team = searchParams.team;
     const place = searchParams.place;
     const result = searchParams.result;
-    const members = searchParams.members;
+    const category = searchParams.category;
     const formation = searchParams.formation;
 
 
@@ -26,7 +26,7 @@ export default async function Page({
             team: team,
             place: place,
             result: result,
-            members: members,
+            category: category,
             formation: formation
         },
     });

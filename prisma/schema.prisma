@@ -18,6 +18,6 @@ model matchrecords {
   team       String
   place      String
   result     String
-  members    String
+  category    String
   formation  String
 }

@@ -11,7 +11,7 @@ async function main() {
         team: 'Ateam',
         place:'Bground',
         result:'1-0',
-        members:'aaa',
+        category:'aaa',
         formation:'xxx'
       },
     }),
@@ -25,7 +25,7 @@ async function main() {
         team: 'Bteam',
         place:'Aground',
         result:'1-3',
-        members:'bbb',
+        category:'bbb',
         formation:'yyy'
       },
     }),
@@ -39,7 +39,7 @@ async function main() {
         team: 'Cteam',
         place:'Cground',
         result:'3-3',
-        members:'ccc',
+        category:'ccc',
         formation:'zzz'
       },
     }),

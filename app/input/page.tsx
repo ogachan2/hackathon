@@ -8,12 +8,12 @@ export default function Page() {
 
   const onSubmit = async data => {
     console.log(data.matchdate)
-    router.push(`/send?matchdate=${data.matchdate}&matchname=${data.matchname}&team=${data.team}&place=${data.place}&result=${data.result}&members=${data.members}&formation=${data.formation}`)
+    router.push(`/send?matchdate=${data.matchdate}&matchname=${data.matchname}&team=${data.team}&place=${data.place}&result=${data.result}&category=${data.category}&formation=${data.formation}`)
   }
 
   return (
     <fragment className="content-center min-h-7">
-      <div className="bg-white/30 p-12 shadow-xl ring-1 ring-gray-900/5 rounded-lg backdrop-blur-lg max-w-xl mx-auto w-full">
+      <div className="bg-white/30 p-12 shadow-xl ring-1 ring-gray-900/5 rounded-lg backdrop-blur-lg max-w-xl h-full mx-auto w-full">
         <div className="flex flex-col justify-between items-center mb-4 space-y-8">
       <h1>入力</h1>
           <div className="divide-y divide-gray-900/5">
@@ -40,8 +40,8 @@ export default function Page() {
                   <input id="result" {...register('result')} />
               </div>
               <div className="flex flex-row">
-                  <label className="place-self-center" htmlFor="members">Members</label>
-                  <input id="members" {...register('members')} />
+                  <label className="place-self-center" htmlFor="category">Category</label>
+                  <input id="category" {...register('category')} />
               </div>
               <div className="flex flex-row">
                   <label className="place-self-center" htmlFor="formation">Formation</label>

@@ -14,48 +14,46 @@ export default async function Table() {
     
   )
 
-  const headers = [
+  const header = 
     {
         matchdate: 'Date',
-        matchname: 'Matchname',
+        matchname: 'Name',
         team: 'Team',
         place: 'Place',
         result: 'Result',
-        members: 'Members',
+        category: 'Category',
         formation: 'Formation',
-      },
-]
+      }
 
   
   console.log(matchrecords)
 
   return (
-    <div className="bg-white/30 p-12 shadow-xl ring-1 ring-gray-900/5 rounded-lg backdrop-blur-lg max-w-xl mx-auto w-full">
+    <div className="bg-white/30 p-12 shadow-xl ring-1 ring-gray-900/5 rounded-lg backdrop-blur-lg  mx-auto w-full">
       <div className="flex justify-between items-center mb-4">
         
         <RefreshButton />
       </div>
       <div className="divide-y divide-gray-900/5">
 
-      {headers.map((header) => (
           <div
             className="flex items-center justify-between py-3"
           >
             <div className="flex flex-wrap justify-between w-full">
               
               <div className="flex space-x-4 w-full">
-                <p className="flex-grow text-center font-medium">{header.matchdate}</p>
-                <p className="flex-grow text-center font-medium">{header.matchname}</p>
-                <p className="flex-grow text-center font-medium">{header.team}</p>
-                <p className="flex-grow text-center font-medium">{header.place}</p>
-                <p className="flex-grow text-center font-medium">{header.result}</p>
-                <p className="flex-grow text-center font-medium">{header.members}</p>
-                <p className="flex-grow text-center font-medium">{header.formation}</p>
+                <p className="flex-grow text-center font-medium w-10">{header.matchdate}</p>
+                <p className="flex-grow text-center font-medium w-10">{header.matchname}</p>
+                <p className="flex-grow text-center font-medium w-10">{header.team}</p>
+                <p className="flex-grow text-center font-medium w-10">{header.place}</p>
+                <p className="flex-grow text-center font-medium w-10">{header.result}</p>
+                <p className="flex-grow text-center font-medium w-10">{header.category}</p>
+                <p className="flex-grow text-center font-medium w-10">{header.formation}</p>
               </div>
             </div>
 
           </div>
-        ))}
+        
 
         {matchrecords.map((matchrecord: any) => (
          <div
@@ -64,13 +62,13 @@ export default async function Table() {
        >
          <div className="flex flex-wrap justify-between w-full">
            <div className="flex space-x-4 w-full">
-             <p className="flex-grow text-center font-medium">{matchrecord.matchdate}</p>
-             <p className="flex-grow text-center font-medium">{matchrecord.matchname}</p>
-             <p className="flex-grow text-center font-medium">{matchrecord.team}</p>
-             <p className="flex-grow text-center font-medium">{matchrecord.place}</p>
-             <p className="flex-grow text-center font-medium">{matchrecord.result}</p>
-             <p className="flex-grow text-center font-medium">{matchrecord.members}</p>
-             <p className="flex-grow text-center font-medium">{matchrecord.formation}</p>
+             <p className="flex-grow text-center font-medium w-10">{matchrecord.matchdate}</p>
+             <p className="flex-grow text-center font-medium w-10">{matchrecord.matchname}</p>
+             <p className="flex-grow text-center font-medium w-10">{matchrecord.team}</p>
+             <p className="flex-grow text-center font-medium w-10">{matchrecord.place}</p>
+             <p className="flex-grow text-center font-medium w-10">{matchrecord.result}</p>
+             <p className="flex-grow text-center font-medium w-10">{matchrecord.category}</p>
+             <p className="flex-grow text-center font-medium w-10">{matchrecord.formation}</p>
            </div>
          </div>
        </div>
