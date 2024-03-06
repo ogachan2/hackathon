@@ -2,36 +2,49 @@ import prisma from '../lib/prisma'
 
 async function main() {
   const response = await Promise.all([
-    prisma.users.upsert({
-      where: { email: 'rauchg@vercel.com' },
+    prisma.matchrecords.upsert({
+      where: { id: 1 },
       update: {},
       create: {
-        name: 'Guillermo Rauch',
-        email: 'rauchg@vercel.com',
-        image:
-          'https://images.ctfassets.net/e5382hct74si/2P1iOve0LZJRZWUzfXpi9r/9d4d27765764fb1ad7379d7cbe5f1043/ucxb4lHy_400x400.jpg',
+        matchdate: '2024/3/7',
+        matchname: 'semifinal',
+        team: 'Ateam',
+        place:'Bground',
+        result:'1-0',
+        members:'aaa',
+        formation:'xxx'
       },
     }),
-    prisma.users.upsert({
-      where: { email: 'lee@vercel.com' },
+
+    prisma.matchrecords.upsert({
+      where: { id: 2 },
       update: {},
       create: {
-        name: 'Lee Robinson',
-        email: 'lee@vercel.com',
-        image:
-          'https://images.ctfassets.net/e5382hct74si/4BtM41PDNrx4z1ml643tdc/7aa88bdde8b5b7809174ea5b764c80fa/adWRdqQ6_400x400.jpg',
+        matchdate: '2024/3/8',
+        matchname: 'section3',
+        team: 'Bteam',
+        place:'Aground',
+        result:'1-3',
+        members:'bbb',
+        formation:'yyy'
       },
     }),
-    await prisma.users.upsert({
-      where: { email: 'stey@vercel.com' },
+
+    prisma.matchrecords.upsert({
+      where: { id: 3 },
       update: {},
       create: {
-        name: 'Steven Tey',
-        email: 'stey@vercel.com',
-        image:
-          'https://images.ctfassets.net/e5382hct74si/4QEuVLNyZUg5X6X4cW4pVH/eb7cd219e21b29ae976277871cd5ca4b/profile.jpg',
+        matchdate: '2024/3/9',
+        matchname: 'traingmatch',
+        team: 'Cteam',
+        place:'Cground',
+        result:'3-3',
+        members:'ccc',
+        formation:'zzz'
       },
     }),
+    
+    
   ])
   console.log(response)
 }

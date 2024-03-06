@@ -5,11 +5,19 @@ import RefreshButton from './refresh-button'
 
 export default async function Table() {
   const startTime = Date.now()
-  // const users = await prisma.users.findMany()
+  const matchrecords = await prisma.matchrecords.findMany({
+    orderBy: [
+      {
+      matchdate: 'asc',
+      }
+    ]
+  }
+    
+  )
 
   const headers = [
     {
-        date: 'Date',
+        matchdate: 'Date',
         matchname: 'Matchname',
         team: 'Team',
         place: 'Place',
@@ -19,19 +27,8 @@ export default async function Table() {
       },
 ]
 
-  const users = [
-    {
-        id: 1,
-        date: '2024/3/7',
-        matchname: 'semifinal',
-        team: 'Ateam',
-        place: 'xxstatium',
-        result: '1-0',
-        members: 'aa',
-        formation: 'xxx',
-      },
-]
-  console.log(users)
+  
+  console.log(matchrecords)
   const duration = Date.now() - startTime
 
   return (
@@ -44,44 +41,41 @@ export default async function Table() {
 
       {headers.map((header) => (
           <div
-            key={header.id}
             className="flex items-center justify-between py-3"
           >
-            <div className="flex items-center space-x-4">
+            <div className="flex flex-wrap justify-between w-full">
               
-              <div className="flex flex-row space-x-4">
-                <p className="font-medium">{header.date}</p>
-                <p className="font-medium">{header.matchname}</p>
-                <p className="font-medium">{header.team}</p>
-                <p className="font-medium">{header.place}</p>
-                <p className="font-medium">{header.result}</p>
-                <p className="font-medium">{header.members}</p>
-                <p className="font-medium">{header.formation}</p>
+              <div className="flex space-x-4 w-full">
+                <p className="flex-grow text-center font-medium">{header.matchdate}</p>
+                <p className="flex-grow text-center font-medium">{header.matchname}</p>
+                <p className="flex-grow text-center font-medium">{header.team}</p>
+                <p className="flex-grow text-center font-medium">{header.place}</p>
+                <p className="flex-grow text-center font-medium">{header.result}</p>
+                <p className="flex-grow text-center font-medium">{header.members}</p>
+                <p className="flex-grow text-center font-medium">{header.formation}</p>
               </div>
             </div>
 
           </div>
         ))}
 
-        {users.map((user) => (
-          <div
-            key={user.id}
-            className="flex items-center justify-between py-3"
-          >
-            <div className="flex items-center space-x-4">
-              
-              <div className="flex flex-row space-x-4">
-                <p className="font-medium">{user.date}</p>
-                <p className="font-medium">{user.matchname}</p>
-                <p className="font-medium">{user.team}</p>
-                <p className="font-medium">{user.place}</p>
-                <p className="font-medium">{user.result}</p>
-                <p className="font-medium">{user.members}</p>
-                <p className="font-medium">{user.formation}</p>
-              </div>
-            </div>
-           
-          </div>
+        {matchrecords.map((matchrecord: any) => (
+         <div
+         key={matchrecord.id}
+         className="flex flex-wrap justify-between py-3"
+       >
+         <div className="flex flex-wrap justify-between w-full">
+           <div className="flex space-x-4 w-full">
+             <p className="flex-grow text-center font-medium">{matchrecord.matchdate}</p>
+             <p className="flex-grow text-center font-medium">{matchrecord.matchname}</p>
+             <p className="flex-grow text-center font-medium">{matchrecord.team}</p>
+             <p className="flex-grow text-center font-medium">{matchrecord.place}</p>
+             <p className="flex-grow text-center font-medium">{matchrecord.result}</p>
+             <p className="flex-grow text-center font-medium">{matchrecord.members}</p>
+             <p className="flex-grow text-center font-medium">{matchrecord.formation}</p>
+           </div>
+         </div>
+       </div>
         ))}
       </div>
     </div>

@@ -1,12 +1,8 @@
+'use client'
+import { FormProvider, useForm } from 'react-hook-form'
 import './globals.css'
 import { Inter } from 'next/font/google'
 
-export const metadata = {
-  metadataBase: new URL('https://postgres-prisma.vercel.app'),
-  title: 'Vercel Postgres Demo with Prisma',
-  description:
-    'A simple Next.js app with Vercel Postgres as the database and Prisma as the ORM',
-}
 
 const inter = Inter({
   variable: '--font-inter',
@@ -14,14 +10,29 @@ const inter = Inter({
   display: 'swap',
 })
 
+type FormValues = {
+  matchdate: string
+  matchname: string
+  team: string
+  place: string
+  result: string
+  members: string
+  formation: string
+}
+
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
+  const methods = useForm<FormValues>({
+    mode: 'onChange',
+  })
   return (
+    <FormProvider {...methods}>
     <html lang="en">
       <body className={inter.variable}>{children}</body>
     </html>
+    </FormProvider>
   )
 }

@@ -11,10 +11,13 @@ datasource db {
   directUrl = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
 }
 
-model users {
-  id        Int      @id @default(autoincrement())
-  name      String
-  email     String   @unique
-  image     String
-  createdAt DateTime @default(now())
+model matchrecords {
+  id         Int      @id @default(autoincrement())
+  matchdate  String
+  matchname  String  
+  team       String
+  place      String
+  result     String
+  members    String
+  formation  String
 }
