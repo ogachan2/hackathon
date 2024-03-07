@@ -17,6 +17,7 @@ export default async function Table() {
 
   const header = 
     {
+        id: 0,
         matchdate: 'Date',
         matchname: 'Name',
         team: 'Team',
@@ -29,7 +30,7 @@ export default async function Table() {
 
   
   console.log(matchrecords)
-
+const matchrecordsWithHeader = [ header , ...matchrecords]
   
 
   return (
@@ -40,40 +41,23 @@ export default async function Table() {
       </div>
       <div className="divide-y divide-gray-900/5">
 
-          <div
-            className="flex items-center justify-between py-3"
-          >
-            <div className="flex flex-wrap justify-between w-full">
-              
-              <div className="flex space-x-4 w-full">
-                <p className="flex-grow text-center font-medium w-10">{header.matchdate}</p>
-                <p className="flex-grow text-center font-medium w-10">{header.matchname}</p>
-                <p className="flex-grow text-center font-medium w-10">{header.team}</p>
-                <p className="flex-grow text-center font-medium w-10">{header.place}</p>
-                <p className="flex-grow text-center font-medium w-10">{header.result}</p>
-                <p className="flex-grow text-center font-medium w-10">{header.category}</p>
-                <p className="flex-grow text-center font-medium w-10">{header.formation}</p>
-                <p className="flex-grow text-center font-medium w-10">{header.delete}</p>
-              </div>
-            </div>
-
-          </div>
+   
         
 
-        {matchrecords.map((matchrecord: any) => (
+        {matchrecordsWithHeader.map((matchrecord: any) => (
          <div
          key={matchrecord.id}
          className="flex flex-wrap justify-between py-3"
        >
          <div className="flex flex-wrap justify-between w-full">
-           <div className="flex space-x-4 w-full">
-             <p className="flex-grow text-center font-medium w-10">{matchrecord.matchdate}</p>
-             <p className="flex-grow text-center font-medium w-10">{matchrecord.matchname}</p>
-             <p className="flex-grow text-center font-medium w-10">{matchrecord.team}</p>
-             <p className="flex-grow text-center font-medium w-10">{matchrecord.place}</p>
-             <p className="flex-grow text-center font-medium w-10">{matchrecord.result}</p>
-             <p className="flex-grow text-center font-medium w-10">{matchrecord.category}</p>
-             <p className="flex-grow text-center font-medium w-10">{matchrecord.formation}</p>
+           <div className="flex w-full">
+             <p className="flex-grow text-center font-medium text-sm w-10">{matchrecord.matchdate}</p>
+             <p className="flex-grow text-center font-medium text-sm w-10">{matchrecord.matchname}</p>
+             <p className="flex-grow text-center font-medium text-sm w-10">{matchrecord.team}</p>
+             <p className="flex-grow text-center font-medium text-sm w-10">{matchrecord.place}</p>
+             <p className="flex-grow text-center font-medium text-sm w-10">{matchrecord.result}</p>
+             <p className="flex-grow text-center font-medium text-sm w-10">{matchrecord.category}</p>
+             <p className="flex-grow text-center font-medium text-sm w-10">{matchrecord.formation}</p>
              <DeleteButton matchid={matchrecord.id}/>
            </div>
          </div>
