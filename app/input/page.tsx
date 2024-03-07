@@ -1,15 +1,28 @@
 'use client'
 import { useRouter } from 'next/navigation'
 import { useFormContext } from 'react-hook-form'
+import { useEffect } from 'react'
 
 export default function Page() {
   const router = useRouter()
-  const { register, handleSubmit } = useFormContext()
+  const { register, handleSubmit, resetField  } = useFormContext()
+  const resetform = () => {
+    resetField('matchdate')
+    resetField('matchname')
+    resetField('team')
+    resetField('place')
+    resetField('result')
+    resetField('category')
+    resetField('formation')
+  }
 
   const onSubmit = async (data: any) => {
     console.log(data.matchdate)
     router.push(`/send?matchdate=${encodeURIComponent(data.matchdate)}&matchname=${encodeURIComponent(data.matchname)}&team=${encodeURIComponent(data.team)}&place=${encodeURIComponent(data.place)}&result=${encodeURIComponent(data.result)}&category=${encodeURIComponent(data.category)}&formation=${encodeURIComponent(data.formation)}`)
   }
+  useEffect(() => {
+    resetform()
+  },[])
 
   return (
     <div className="content-center min-h-7">
