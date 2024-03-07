@@ -1,10 +1,9 @@
 import prisma from '@/lib/prisma'
-import { timeAgo } from '@/lib/utils'
-import Image from 'next/image'
+import { revalidatePath } from "next/cache";
 import RefreshButton from './refresh-button'
 
 export default async function Table() {
-  const startTime = Date.now()
+
   const matchrecords = await prisma.matchrecords.findMany({
     orderBy: [
       {
@@ -29,7 +28,6 @@ export default async function Table() {
 
   
   console.log(matchrecords)
-  const duration = Date.now() - startTime
 
   return (
     <div className="bg-white/30 p-12 shadow-xl ring-1 ring-gray-900/5 rounded-lg backdrop-blur-lg max-w-xl mx-auto w-full">
