@@ -1,6 +1,7 @@
 import prisma from '@/lib/prisma'
 import { revalidatePath } from "next/cache";
 import RefreshButton from './refresh-button'
+import DeleteButton from './delete-button'
 
 export default async function Table() {
 
@@ -23,10 +24,13 @@ export default async function Table() {
         result: 'Result',
         category: 'Category',
         formation: 'Formation',
+        delete: 'Delete'
       }
 
   
   console.log(matchrecords)
+
+  
 
   return (
     <div className="bg-white/30 p-12 shadow-xl ring-1 ring-gray-900/5 rounded-lg backdrop-blur-lg  mx-auto w-full">
@@ -49,6 +53,7 @@ export default async function Table() {
                 <p className="flex-grow text-center font-medium w-10">{header.result}</p>
                 <p className="flex-grow text-center font-medium w-10">{header.category}</p>
                 <p className="flex-grow text-center font-medium w-10">{header.formation}</p>
+                <p className="flex-grow text-center font-medium w-10">{header.delete}</p>
               </div>
             </div>
 
@@ -69,6 +74,7 @@ export default async function Table() {
              <p className="flex-grow text-center font-medium w-10">{matchrecord.result}</p>
              <p className="flex-grow text-center font-medium w-10">{matchrecord.category}</p>
              <p className="flex-grow text-center font-medium w-10">{matchrecord.formation}</p>
+             <DeleteButton matchid={matchrecord.id}/>
            </div>
          </div>
        </div>
