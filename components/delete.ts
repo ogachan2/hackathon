@@ -6,7 +6,7 @@ export const deleterecord = async (matchid: string) => {
  console.log(matchid)
  const deletematchrecords = await prisma.matchrecords.delete({
     where: {
-      id: String(matchid),
+      id: Number(matchid),
     },
   })
   console.log(deletematchrecords)
