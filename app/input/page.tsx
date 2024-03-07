@@ -8,7 +8,7 @@ export default function Page() {
 
   const onSubmit = async (data: any) => {
     console.log(data.matchdate)
-    router.push(`/send?matchdate=${data.matchdate}&matchname=${data.matchname}&team=${data.team}&place=${data.place}&result=${data.result}&category=${data.category}&formation=${data.formation}`)
+    router.push(`/send?matchdate=${encodeURIComponent(data.matchdate)}&matchname=${encodeURIComponent(data.matchname)}&team=${encodeURIComponent(data.team)}&place=${encodeURIComponent(data.place)}&result=${encodeURIComponent(data.result)}&category=${encodeURIComponent(data.category)}&formation=${encodeURIComponent(data.formation)}`)
   }
 
   return (
