@@ -32,32 +32,32 @@ export default function Page() {
           <div className="divide-y divide-gray-900/5">
       <div className="flex flex-wrap justify-between w-full">
           <form className="flex flex-col space-y-4" onSubmit={handleSubmit(onSubmit)}>
-              <div className="flex flex-row">
-                  <label className="place-self-center" htmlFor="matchdate">Matchdate</label>
+              <div className="flex flex-row space-x-10">
+                  <label className="place-self-center w-20" htmlFor="matchdate">Matchdate</label>
                   <input id="matchdate" {...register('matchdate')} />
               </div>
               <div className="flex flex-row space-x-10">
-                  <label className="place-self-center" htmlFor="matchname">Matchname</label>
+                  <label className="place-self-center w-20" htmlFor="matchname">Matchname</label>
                   <input id="matchname" {...register('matchname')} />
               </div>
-              <div className="flex flex-row">
-                  <label className="place-self-center" htmlFor="team">Team</label>
+              <div className="flex flex-row space-x-10">
+                  <label className="place-self-center w-20" htmlFor="team">Team</label>
                   <input id="team" {...register('team')} />
               </div>
-              <div className="flex flex-row">
-                  <label className="place-self-center" htmlFor="place">Place</label>
+              <div className="flex flex-row space-x-10">
+                  <label className="place-self-center w-20" htmlFor="place">Place</label>
                   <input id="place" {...register('place')} />
               </div>
-              <div className="flex flex-row">
-                  <label className="place-self-center" htmlFor="result">Result</label>
+              <div className="flex flex-row space-x-10">
+                  <label className="place-self-center w-20" htmlFor="result">Result</label>
                   <input id="result" {...register('result')} />
               </div>
-              <div className="flex flex-row">
-                  <label className="place-self-center" htmlFor="category">Category</label>
+              <div className="flex flex-row space-x-10">
+                  <label className="place-self-center w-20" htmlFor="category">Category</label>
                   <input id="category" {...register('category')} />
               </div>
-              <div className="flex flex-row">
-                  <label className="place-self-center" htmlFor="formation">Formation</label>
+              <div className="flex flex-row space-x-10">
+                  <label className="place-self-center w-20" htmlFor="formation">Formation</label>
                   <input id="formation" {...register('formation')} />
               </div>
                   <button type="submit">Confirm</button>
